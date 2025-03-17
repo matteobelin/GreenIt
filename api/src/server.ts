@@ -1,9 +1,14 @@
 import fastify from 'fastify'
 import userRoutes from './routes/user.route'
 import articleRoutes from './routes/article.route'
+import fastifyPostgres from 'fastify-postgres';
 
 
 const app = fastify();
+
+app.register(fastifyPostgres, {
+  connectionString: 'postgres://user:password@localhost:5432/mydb', 
+});
 
 app.register(userRoutes);
 app.register(articleRoutes);
