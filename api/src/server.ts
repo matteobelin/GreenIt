@@ -10,11 +10,11 @@ app.register(articleRoutes);
 
 
 
-app.listen({ port: 8080 }, (err) => {
+app.listen({ port: 5000, host: '0.0.0.0' }, (err: Error | null) => { 
   if (err) {
     console.error(err);
     process.exit(1);
   }
-  console.log("Server running on http://localhost:8080");
+  console.log("Server running on http://localhost:5000");
 })
 

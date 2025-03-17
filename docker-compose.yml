@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./front 
+      dockerfile: Dockerfile  
+    ports:
+      - "8080:80"
+    networks:
+      - my_network
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile 
+    ports:
+      - "5000:5000"
+    networks:
+      - my_network
+  
+
+  db:
+    image: postgres:13  
+    environment:
+      POSTGRES_USER: user      
+      POSTGRES_PASSWORD: password  
+      POSTGRES_DB: mydb        
+    volumes:
+      - postgres-data:/var/lib/postgresql/data  
+    networks:
+      - my_network   
+    restart: always  
+  adminer:
+    image: adminer 
+    ports:
+      - "8081:8080" 
+    networks:
+      - my_network  
+    environment:
+      ADMINER_DEFAULT_SERVER: db  
+      ADMINER_THEME: dracula
+
+
+networks:
+  my_network: 
+
+volumes:
+  postgres-data:
