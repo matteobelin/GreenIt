@@ -89,7 +89,7 @@ onUnmounted(() => {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Affiche 2 cartes par ligne par défaut */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 20px;
   padding: 20px;
   max-width: 900px;

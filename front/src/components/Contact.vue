@@ -2,8 +2,7 @@
     <div class="contact-page">
       <div class="contact-card">
         <h1>Contact</h1>
-        
-        <!-- Informations de contact -->
+      
         <p>Nous sommes disponibles par e-mail et par téléphone :</p>
     
         <div class="contact-info">
@@ -21,8 +20,7 @@
         </div>
     
         <hr />
-    
-        <!-- Formulaire de contact -->
+
         <h2>Envoyez-nous un message :</h2>
         <form>
           <div class="form-group">
@@ -55,7 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 85vh;
   }
   
   .contact-card {

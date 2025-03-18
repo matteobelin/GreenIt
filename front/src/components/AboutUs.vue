@@ -16,7 +16,7 @@ onMounted(async () => {
     const response = await ky.get(`http://localhost:5000/articlesDescription?lastId=0`);
     articles.value = await response.json() as Article[];
   } catch (err) {
-    error.value = 'Erreur lors du chargement des articles. Veuillez réessayer plus tard.'; // Gérer l'erreur
+    error.value = 'Erreur lors du chargement des articles. Veuillez réessayer plus tard.'; 
     console.log(err);
   }
 });
@@ -24,7 +24,7 @@ onMounted(async () => {
 
 
 <template>
-    <div>
+    <div class="about-us">
       <h1>About Us</h1>
       <p v-if="error" class="error-message">{{ error }}</p>
       <div v-if="!error" class="carousel-container">
@@ -43,6 +43,12 @@ onMounted(async () => {
   
   <style scoped>
 
+.about-us {
+    max-width: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
 .styled-paragraph {
     font-size: 1.1rem; 
     line-height: 1.6;
