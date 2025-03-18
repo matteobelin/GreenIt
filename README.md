@@ -76,6 +76,6 @@ docker-compose build
 docker-compose up
 ```
 ### ⚠️ **Warning :**
-L'API n'est pas actuellement containerisée avec Docker. Pour démarrer l'API, il suffit d'exécuter la commande suivante : `npm install` puis `npm run dev` dans le répertoire `api` .
+L'API n'est actuellement pas containerisée avec Docker. Pour démarrer l'API, il suffit d'exécuter la commande suivante : `npm install` puis `npm run dev` dans le répertoire `api` .
 
 
