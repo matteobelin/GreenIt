@@ -55,6 +55,30 @@ export default async function articleRoutes(fastify: FastifyInstance) {
     }
   });
 
+  fastify.get('/articlesDescription', async (request, reply) => {
+    const lastId = (request.query as { lastId?: string }).lastId
+    ? parseInt((request.query as { lastId?: string }).lastId as string)
+    : 0;
+
+  const limit = 4;
+
+  const offset = lastId ? lastId : 0;
+
+  try {
+    let query ='SELECT id,nom,description FROM articles WHERE id > $1 ORDER BY id DESC LIMIT $2';
+    
+
+    const result = await fastify.pg.query(query, [offset, limit]);
+    if (result.rows.length === 0) {
+      return reply.code(404).send({ message: 'No articles found' });
+    }
+  reply.code(200).send(result.rows);
+    } catch (error) {
+      reply.code(500).send({ error: 'Database query error', details: (error as Error).message });
+    }
+  });
+
+
 
 
 
