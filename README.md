@@ -36,6 +36,7 @@ Actuellement, les images peuvent être trop grandes pour les appareils mobiles, 
 - **Apache Vhost :**  Désactiver le AllowOverride pour bloquer la réécriture
 de surcharger des directives du serveur web
 
+- **SonarCube :** Mettre en place SonarQube pour l'analyse continue du code, afin de détecter les erreurs, les vulnérabilités, et d'améliorer la qualité du code 
 ## Actions à venir
 
 ### Mise en production (MEP)
