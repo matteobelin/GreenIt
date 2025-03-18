@@ -19,6 +19,7 @@ app.register(fastifyCors, {
 
 app.register(fastifyPostgres, {
   connectionString: 'postgres://user:password@localhost:5432/mydb', 
+  //connectionString: 'postgres://user:password@db:5432/mydb'
 });
 
 app.register(fastifyStatic, {
