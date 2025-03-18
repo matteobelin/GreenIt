@@ -66,16 +66,16 @@ PlanetHoster a une politique de réduction de l'empreinte carbone et utilise des
 
 ## Démarrage
 
-## Docker compose
-### Créer l'image
+### Docker compose
+#### Créer l'image
 ```bash
 docker-compose build
 ```
-### Démarrer les conteneurs
+#### Démarrer les conteneurs
 ```bash
 docker-compose up
 ```
-## ⚠️ **Warning :**
-Actuellement l'api n'est pas Dockeriser pour lancer l'api faire ``npm run dev`` dans le dossier api.
+### ⚠️ **Warning :**
+L'API n'est pas actuellement containerisée avec Docker. Pour démarrer l'API, il suffit d'exécuter la commande suivante : `npm run dev` dans le répertoire `api` .
 
 
