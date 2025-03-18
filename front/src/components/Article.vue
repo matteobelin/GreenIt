@@ -67,7 +67,7 @@ onUnmounted(() => {
     <div v-if="!error" class="cards-container">
       <div v-for="article in articles" :key="article.id" class="card">
         <h2 class="article-title">{{ article.nom }}</h2>
-        <img :src="article.img_url" alt="Image de l'article" class="article-image" />
+        <img :src="article.img_url" alt="Image de l'article" class="article-image" loading="lazy" />
         <div class="card-content">
           <p class="article-description">{{ article.description }}</p>
         </div>

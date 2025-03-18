@@ -112,7 +112,7 @@ export default async function articleRoutes(fastify: FastifyInstance) {
         const fileBuffer = await data.toBuffer();
         await sharp(fileBuffer)
           .webp() 
-          .resize(1200, 800)
+          .resize(500, 500)
           .toFile(webpFilePath); 
   
         uploadPath = webpFilePath; 
