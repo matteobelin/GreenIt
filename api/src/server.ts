@@ -5,10 +5,17 @@ import fastifyPostgres from 'fastify-postgres';
 import fastifyMultipart from '@fastify/multipart';
 import path from 'path';
 import fastifyStatic from '@fastify/static';
+import fastifyCors from '@fastify/cors';
 
 
 const app = fastify();
-const imageDir = path.join(__dirname, 'src/img_url');
+const imageDir = path.join(__dirname, '/img_url');
+
+app.register(fastifyCors, {
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  allowedHeaders: ['Content-Type', 'Authorization'],
+});
 
 app.register(fastifyPostgres, {
   connectionString: 'postgres://user:password@localhost:5432/mydb', 
@@ -20,6 +27,7 @@ app.register(fastifyStatic, {
 });
 
 app.register(fastifyMultipart, {
+  attachFieldsToBody: true,
   limits: { 
     fileSize: 5 * 1024 * 1024,  
     files: 1,            
